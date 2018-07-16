@@ -1,0 +1,27 @@
+{
+  "name": "work-timer",
+  "version": "1.0.0",
+  "description": "Task timer",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kamyil/work-timer.git"
+  },
+  "author": "Kamil \"Kamyil\" Bugajak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kamyil/work-timer/issues"
+  },
+  "homepage": "https://github.com/Kamyil/work-timer#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-typescript": "^5.0.0-alpha.3",
+    "typescript": "^2.9.2"
+  }
+}
