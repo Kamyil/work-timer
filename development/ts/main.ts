@@ -4,12 +4,19 @@ import './components/date.ts';
 
 
 let app = angular.module('app',[]);
+let savedTasks = {};
 declare var angular: any;
 app.controller('tasksController', ['$scope', function($scope){
 
 $scope.tasks = [];
 
-
+$scope.saveData = () => {
+    window.localStorage.setItem("savedTasks",JSON.stringify($scope.tasks));
+}
+$scope.loadData = () => {
+    $scope.tasks = window.localStorage.getItem("savedTasks");
+    JSON.parse($scope.tasks);
+}
 
 
 $scope.addTask = () => {

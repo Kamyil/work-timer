@@ -1,0 +1,8 @@
+@mixin scaleOnActive($size,$transition-duration){
+
+    &:active{
+        transform: scale($size);
+        transition-duration: $transition-duration+s;
+    }
+
+}

@@ -16,11 +16,13 @@
 @import "functions/centerPositionAbsolute";
 @import 'functions/hover/fluidHoverText';
 @import 'functions/hover/fluidHoverField';
+@import 'functions/scaleOnActive';
 
 // Components
 @import "components/nav";
 @import "components/table";
 @import "components/clock";
+@import "components/storage";
 
 body{
     background-color: $background-color;
@@ -47,12 +49,16 @@ body{
     margin: 50px;
     border-radius: 50%;
     @include font($serif-font,20px,$primary-color,300,null);
+    @include scaleOnActive(0.9,0.25);
+
     &:hover{
         background-color: $primary-color;
         
         font-size: 24px;
         transform: rotate(-90deg);
         @include fluidHoverText($background-color,.25);
+        @include scaleOnActive(0.9,0.25);
+
         
     }
     

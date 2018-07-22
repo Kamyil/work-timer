@@ -66,7 +66,10 @@ table{
         border-radius: 5px;
         width: 45px;
         height: 25px;
+        outline: none;
         text-align: center;
+        @include scaleOnActive(0.9,0.25);
+
         &:hover{
          @include font('Font-Awesome',14px,$background-color,null,null);
          @include fluidHoverField($primary-color,.25);
