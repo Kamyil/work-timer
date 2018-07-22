@@ -1,0 +1,37 @@
+nav{
+   @include centerPositionFixedHorizontally(100vw);
+    bottom: 0;
+    height: 10vh;
+    background-color: $tile-color;
+    -webkit-box-shadow: 0px -4px 46px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px -4px 46px 0px rgba(0,0,0,0.45);
+    box-shadow: 0px -4px 46px 0px rgba(0,0,0,0.45);
+
+    &-current-task{
+        // position: fixed;
+        // left: 10vw;
+    }
+    &-task-controls{
+        // position: relative;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+

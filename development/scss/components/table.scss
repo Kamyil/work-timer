@@ -1,0 +1,42 @@
+table{
+
+    @include centerPositionAbsolute();
+    width: 90vw;
+    @include font($serif-font);
+    text-align: center;
+    thead{
+        background-color: $primary-color;
+        color: $tile-color;
+    }
+    tbody{
+
+    }
+    th{
+        padding: 10px;
+        font-family: $serif-font;
+        &:first-child{
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        &:last-child{
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+      
+    }
+    tr{
+        &:nth-child(even){
+            background-color: $tile-color;
+            }
+        font-family: $sans-font;
+    }
+    td{
+ 
+    }
+
+
+
+
+
+
+}

@@ -1,5 +1,39 @@
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/type";
+// @import "node_modules/bootstrap/scss/tables";
+
+@import "variables"; // My own variables
+
+// Functions
+@import "functions/font";
+@import "functions/z-index";
+@import "functions/centerPositionFixed";
+@import "functions/centerPositionAbsolute";
+// Components
+@import "components/nav";
+@import "components/table";
+@import "components/clock";
+
 body{
-    background-color: #202020;
-    color: white;
-    font-family: 'Roboto', sans-serif;
+    background-color: $background-color;
+    color: #f1f1f1;
+    // margin: 0;
+    // padding: 0;
+}
+
+.main-title{
+    @include font($sans-font,45px,white,500,null);
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.column{
+    background-color: $primary-color;
+    padding: 20px;
+    color: black;
+    @include font($serif-font);
 }

@@ -1,0 +1,12 @@
+#clock{
+
+    display: inline-block;
+    text-align: right;
+    @include font($sans-font,25px,white,300,null);
+    
+
+
+
+
+
+}

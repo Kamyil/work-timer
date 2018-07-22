@@ -1,2 +1,0 @@
-# work-timer
-Fast and lightweight app which will allows you to generate auto reports of your work. The idea is simple => Put the task which you want to work with => hit the work button and keep working. When you finish the task click "It's Done" button, and app will tell you how much time you spend on it. Also this app can generate the workday/workweek reports with full info of your work. Enjoy :)   
