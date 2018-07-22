@@ -8,11 +8,12 @@ nav{
     box-shadow: 0px -4px 46px 0px rgba(0,0,0,0.45);
 
     &-current-task{
-        // position: fixed;
-        // left: 10vw;
+        position: fixed;
+        left: 50px;
     }
     &-task-controls{
-        // position: relative;
+        position: relative;
+        left: 50px;
     }
 
 

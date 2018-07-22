@@ -1,6 +1,7 @@
 
 {
   "compilerOptions": {
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "noImplicitUseStrict": true
   }
 }

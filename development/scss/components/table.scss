@@ -1,6 +1,7 @@
 table{
 
-    @include centerPositionAbsolute();
+    // @include centerPositionAbsolute();
+    margin-top: 50px;
     width: 90vw;
     @include font($serif-font);
     text-align: center;
@@ -8,9 +9,7 @@ table{
         background-color: $primary-color;
         color: $tile-color;
     }
-    tbody{
 
-    }
     th{
         padding: 10px;
         font-family: $serif-font;
@@ -30,11 +29,50 @@ table{
             }
         font-family: $sans-font;
     }
-    td{
- 
+    input{
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        @include font($serif-font,18px,$primary-color,null,null);
+        outline: none !important;
+        &[type='number']{
+            -moz-appearance:textfield;
+        
+        }
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        &::selection{
+            background-color: $primary-color;
+            color: $tile-color;
+        }
+        &::-moz-selection{
+            background-color: $primary-color;
+            color: $tile-color;
+        }
     }
-
-
+    .task-time{
+        @extend input;
+        width: 50px;
+        &:first-child{
+            width: 22px;
+        }
+    }
+    .delete-task{
+        @include font('Font-Awesome',14px,$primary-color,null,null);
+        background-color: transparent;
+        border: 1px solid $primary-color;
+        border-radius: 5px;
+        width: 45px;
+        height: 25px;
+        text-align: center;
+        &:hover{
+         @include font('Font-Awesome',14px,$background-color,null,null);
+         @include fluidHoverField($primary-color,.25);
+         
+        }
+    }
 
 
 

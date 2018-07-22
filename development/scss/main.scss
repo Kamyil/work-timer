@@ -4,6 +4,7 @@
 @import "node_modules/bootstrap/scss/mixins";
 @import "node_modules/bootstrap/scss/grid";
 @import "node_modules/bootstrap/scss/type";
+
 // @import "node_modules/bootstrap/scss/tables";
 
 @import "variables"; // My own variables
@@ -13,6 +14,9 @@
 @import "functions/z-index";
 @import "functions/centerPositionFixed";
 @import "functions/centerPositionAbsolute";
+@import 'functions/hover/fluidHoverText';
+@import 'functions/hover/fluidHoverField';
+
 // Components
 @import "components/nav";
 @import "components/table";
@@ -30,10 +34,26 @@ body{
     letter-spacing: 10px;
     text-transform: uppercase;
 }
-
-.column{
-    background-color: $primary-color;
-    padding: 20px;
-    color: black;
-    @include font($serif-font);
+.clock-and-date{
+    margin-left: 15px;
+}
+.add-task-btn{
+    background-color: $background-color;
+    display: block;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border: 1px solid $primary-color;
+    margin: 50px;
+    border-radius: 50%;
+    @include font($serif-font,20px,$primary-color,300,null);
+    &:hover{
+        background-color: $primary-color;
+        
+        font-size: 24px;
+        transform: rotate(-90deg);
+        @include fluidHoverText($background-color,.25);
+        
+    }
+    
 }

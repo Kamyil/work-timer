@@ -1,12 +1,7 @@
 #clock{
-
-    display: inline-block;
-    text-align: right;
+    display: block;
     @include font($sans-font,25px,white,300,null);
-    
-
-
-
-
-
+}
+#todays-date{
+    @include font($sans-font,22px,$primary-color,300,null);
 }

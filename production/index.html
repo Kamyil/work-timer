@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Work-Timer</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Serif&amp;subset=latin-ext" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 </head>
 <body>
 
@@ -23,17 +23,11 @@
                 
         </nav> -->
 
-<div class="container-fluid">
+<div class="container" ng-controller="tasksController">
     <div class="row">
-    <h2 class="main-title">Dziś</h2>
-    <h2 id="todays-date"></h2>
-    <!-- <div class="row">
-        
-        <div class="column">Kolumna</div>
-        <div class="column">Kolumna</div>
-        <div class="column">Kolumna</div>
-    </div> -->
-    <h2 id="clock"></h2>
+        <div class="col-lg-1"><h2 class="main-title">Dziś</h2></div>
+        <div class="col-lg-2 clock-and-date"><h2 id="clock"></h2><h2 id="todays-date"></h2></div>
+    
 </div>
 
 <div class="row">
@@ -43,54 +37,49 @@
                 <thead>
                   <tr>
                     <th>Task</th>
-                    <th>Link</th>
                     <th>Start</th>
-                    <th>End</th>
-                    <th>Time spent</th>
+                    <th>Koniec</th>
+                    <th>Spędzony czas</th>
+                    <th>Usuń</th>
                     
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th>1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+
+                  <tr ng-repeat="task in tasks">
+                    <th><input type="text" name="" value="{{task.name}}"></th>
+                    <td>
+                        <input type="number" name="" class="task-time" ng-model="task.start_hour" value="task.start_hour">
+                        <input type="number" name="" class="task-time" ng-model="task.start_minute" value="task.start_minute">
+                    
+                    </td>
+                    <td>
+                        <input type="number" class="task-time" ng-model="task.end_hour" value="task.end_hour">
+                        <input type="number" class="task-time" ng-model="task.end_minute" value="task.end_minute">
+                    </td>
+                    <td>{{calculateMinutes(task)}}m</td>
+                    <td><button class="delete-task" ng-click="deleteTask($index)"><i class="far fa-trash-alt" aria-hidden="true"></i></button></td>
                   </tr>
-                  <tr>
-                    <th>2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th>3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
-                  <tr>
-                        <th>4</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
+                  
                 </tbody>
-              </table>
+                
+
+              </table> <br>
+</div>
+<button class="add-task-btn" ng-click="addTask()">+</button>
+
+
+
+
+
+
+
+
+
+
 </div>
 
-
-
-
-
-
-
-
-
-
-</div>
-
-
+<script src="js/angular.js"></script>
 <script src="js/main.min.js"></script>
 </body>
 </html>
