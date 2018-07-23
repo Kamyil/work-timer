@@ -76,6 +76,25 @@ table{
          
         }
     }
+    .total{
+
+        background-color: $primary-color;
+        color: $background-color;
+        padding: 10px 0px 10px 0px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        &-header{
+            @include font($serif-font,null,$background-color,500,null);
+        }
+        &-number{
+
+            @include font($sans-font,null,$background-color,700,null);
+            
+        
+        }
+
+
+    }
 
 
 

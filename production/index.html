@@ -50,7 +50,7 @@
                 <tbody>
 
                   <tr ng-repeat="task in tasks">
-                    <th><input type="text" name="" value="{{task.name}}"></th>
+                    <th><input type="text" name="" ng-model="task.name" value="{{task.name}}"></th>
                     <td>
                         <input type="number" name="" class="task-time" ng-model="task.start_hour" value="task.start_hour">
                         <input type="number" name="" class="task-time" ng-model="task.start_minute" value="task.start_minute">
@@ -65,6 +65,15 @@
                   </tr>
                   
                 </tbody>
+                <tfoot>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="total">
+                   <span class="total-header">Łącznie</span> &nbsp;
+                   <span class="total-number"> {{getTotal(task)}} </span>
+                  </td>
+              </tfoot>
                 
 
               </table> <br>

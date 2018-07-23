@@ -2,13 +2,15 @@ import 'bootstrap';
 import '../scss/main.scss';
 import './components/date.ts';
 
-
 let app = angular.module('app',[]);
 let savedTasks = {};
 declare var angular: any;
 app.controller('tasksController', ['$scope', function($scope){
 
 $scope.tasks = [];
+$scope.totalHours; 
+
+
 
 $scope.saveData = () => {
     window.localStorage.setItem("savedTasks",JSON.stringify($scope.tasks));
@@ -26,14 +28,15 @@ $scope.addTask = () => {
   
     $scope.tasks.push({
       
-        name: 'Another Task',
+        name: 'Task',
         start_hour: h,
         start_minute: m,
-        end_hour: null,
-        end_minute: null,
+        end_hour: h+1,
+        end_minute: h+1,
         time_spent: null
         
     });
+   
  
 }
 $scope.deleteTask = function(){
@@ -55,8 +58,21 @@ $scope.calculateMinutes = (task) => {
 
 }
 
-
-
+function convertMinsToHrsMins(mins:number){
+    let h:any = Math.floor(mins / 60);
+    let m:any = mins % 60;
+    h = h < 10 ? '0' + h : h;
+    m = m < 10 ? '0' + m : m;
+    return `${h}:${m}`;
+  }
+$scope.getTotal = () => {
+    let total:any = 0;
+    angular.forEach($scope.tasks, (task) => {
+      total += task.time_spent;
+    });
+    total = convertMinsToHrsMins(total);
+    return total+'h';
+}
 
 
 
