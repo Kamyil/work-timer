@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Work-Timer</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Serif&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <script src="js/angular.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script> -->
+
 </head>
 <body>
 
@@ -30,8 +35,8 @@
     
 </div>
 
-<button class="storageControl" ng-click="saveData()">Zapisz</button>
-<button class="storageControl" ng-click="loadData()">Wczytaj</button>
+<button class="storageControl" id="save-to-localStorage" ng-click="saveData()">Zapisz</button>
+<button class="storageControl" id="load-from-localStorage" ng-click="loadData()">Wczytaj</button>
 
 <div class="row">
       
@@ -80,9 +85,13 @@
 </div>
 <button class="add-task-btn" ng-click="addTask()">+</button>
 
-
-
-
+<!-- Alert Box -->
+<div class="notification bounceOutDown">
+    <div class="notification-text">
+        <span>Zapisane!</span>
+    </div>
+</div>
+<!--  -->
 
 
 
@@ -91,7 +100,6 @@
 
 </div>
 
-<script src="js/angular.js"></script>
 <script src="js/main.min.js"></script>
 </body>
 </html>

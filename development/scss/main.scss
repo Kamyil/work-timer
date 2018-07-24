@@ -17,12 +17,15 @@
 @import 'functions/hover/fluidHoverText';
 @import 'functions/hover/fluidHoverField';
 @import 'functions/scaleOnActive';
+@import 'functions/animations/bounceInUp';
+@import 'functions/animations/bounceOutDown';
 
 // Components
 @import "components/nav";
 @import "components/table";
 @import "components/clock";
 @import "components/storage";
+@import "components/notification";
 
 body{
     background-color: $background-color;

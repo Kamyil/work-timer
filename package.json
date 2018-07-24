@@ -10,6 +10,7 @@
     "gulp-uglify": "^3.0.0"
   },
   "devDependencies": {
+    "angular": "^1.7.2",
     "browser-sync-webpack-plugin": "^2.2.2",
     "browsersync": "0.0.1-security",
     "clean-webpack-plugin": "^0.1.19",

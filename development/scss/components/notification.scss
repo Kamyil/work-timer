@@ -1,0 +1,25 @@
+.notification {
+    width: 150px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background-color: $primary-color;
+	border-radius: 5px;
+	color: $background-color;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+
+    &-text {
+        padding: 0 16px;
+        @include font($serif-font,18px,$background-color,500,48px);
+        text-align: center;
+    }
+
+        
+
+
+}
+
+
+

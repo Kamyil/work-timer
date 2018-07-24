@@ -1,24 +1,32 @@
+// import angular from 'angular';
+// import ngStorage from 'ngstorage';
 import 'bootstrap';
 import '../scss/main.scss';
 import './components/date.ts';
+import './components/notificationToggleClass.ts';
 
-let app = angular.module('app',[]);
-let savedTasks = {};
+
 declare var angular: any;
-app.controller('tasksController', ['$scope', function($scope){
 
-$scope.tasks = [];
+var app = angular.module('app',[]);
+app.controller('tasksController', ['$scope', function($scope,$timeout){
+
+
+
+
+$scope.tasks = [
+    {
+        name: 'Task Review',
+        start_hour: 8,
+        start_minute: 0,
+        end_hour: 8,
+        end_minute: 30,
+        time_spent: null
+    }
+];
+let storage = $scope.tasks;
 $scope.totalHours; 
 
-
-
-$scope.saveData = () => {
-    window.localStorage.setItem("savedTasks",JSON.stringify($scope.tasks));
-}
-$scope.loadData = () => {
-    $scope.tasks = window.localStorage.getItem("savedTasks");
-    JSON.parse($scope.tasks);
-}
 
 
 $scope.addTask = () => {
@@ -36,11 +44,13 @@ $scope.addTask = () => {
         time_spent: null
         
     });
+    storage = $scope.tasks;
    
  
 }
 $scope.deleteTask = function(){
     $scope.tasks.splice(this.$index, 1);
+    const storage = $scope.tasks;
 }
 $scope.calculateMinutes = (task) => {
 
@@ -52,7 +62,6 @@ $scope.calculateMinutes = (task) => {
     time2 = today.setMinutes(task.end_minute);
     task.time_spent = (time2 - time1)/1000;
     task.time_spent = task.time_spent/60;
-
     return task.time_spent;
 
 
@@ -74,6 +83,20 @@ $scope.getTotal = () => {
     return total+'h';
 }
 
+
+$scope.saveData = () => {
+    localStorage.setItem('storage', JSON.stringify($scope.tasks));
+    
+}
+$scope.loadData = () => {
+
+    $scope.tasks = JSON.parse(localStorage.getItem('storage'));
+
+};
+
+// Auto save
+
+window.setTimeout($scope.saveData,10000);
 
 
 
