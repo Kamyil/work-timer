@@ -25,14 +25,14 @@ If it happens, hit `npm install` to let app install all required packages to run
 And then:
 
 ### if you want to run this with console locally
-Just call the app with `npm start`
+Just call the app with `npm start` . App after build proccess will open himself in your default browser
 **BUT WARNING!!! IF YOU'RE NOT DEVELOPER => DON'T CHANGE THE FILES IN /DEVELOPMENT folder. YOU CAN DESTROY THE APP BY EDITING THEM**
 
 
 ### if you want to run this by opening the file
-After `npm install` eveything should work fine, so open the index.html folder in /production folder.
+Eveything should work fine without any installation, so open the index.html file in /production folder.
 
-#TO-DO 
+###TODO 
 
 Here's our simple to-do list. Here we can show you on which feature we're working right now and what's already done. Go ahead and 
 type your ideas to improve this cool tool. 
