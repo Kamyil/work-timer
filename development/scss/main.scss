@@ -50,19 +50,31 @@ body{
     outline: none;
     border: 1px solid $primary-color;
     margin: 50px;
-    border-radius: 50%;
+    transform: rotate(45deg);
     @include font($serif-font,20px,$primary-color,300,null);
     @include scaleOnActive(0.9,0.25);
 
     &:hover{
         background-color: $primary-color;
-        
         font-size: 24px;
-        transform: rotate(-90deg);
+        box-shadow: 0px 0px 76px -8px rgba(0,0,0,0.44);
+        transform: rotate(-45deg);
         @include fluidHoverText($background-color,.25);
-        @include scaleOnActive(0.9,0.25);
-
-        
+        @include scaleOnActive(0.9,0.25); 
+    }
+    &:active{
+        border-radius: 5px;
+        transition-duration: .25s;
+        span{
+            transform: rotate(-90deg);
+            transition-duration: .25s;
+        }
+    }
+    
+    
+    span{
+        transform: rotate(-45deg);
+        display: block;
     }
     
 }
