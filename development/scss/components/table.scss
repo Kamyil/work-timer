@@ -9,6 +9,15 @@ table{
         background-color: $primary-color;
         color: $tile-color;
     }
+    .filter-header{
+        @include font($serif-font,22px,$primary-color,null,null);
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-bottom: 1px solid $primary-color;
+        text-align: left;
+        
+
+    }
 
     th{
         padding: 10px;
@@ -23,17 +32,33 @@ table{
         }
       
     }
-    tr{
-        &:nth-child(even){
-            background-color: $tile-color;
+    .tasks{
+        &-table{
+            font-family: $sans-font;
+            color: white;
+            
+            &-single,&-group{
+                &:nth-child(even){
+                    background-color: $tile-color;
+                    }    
             }
-        font-family: $sans-font;
+      
+
+        } 
     }
+    .task{
+        &-single{
+            &-name{
+                color: white
+            }
+        }
+    }
+
     input{
         background-color: transparent;
         border: none;
         text-align: center;
-        @include font($serif-font,18px,$primary-color,null,null);
+        @include font($serif-font,18px,null,null,null);
         outline: none !important;
         &[type='number']{
             -moz-appearance:textfield;
@@ -52,9 +77,11 @@ table{
             color: $tile-color;
         }
     }
+
     .task-time{
         @extend input;
         width: 50px;
+        color: $primary-color;
         &:first-child{
             width: 22px;
         }

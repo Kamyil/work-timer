@@ -9,7 +9,8 @@
     
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Serif&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-    <script src="js/angular.js"></script>
+    <script src="./js/angular.js"></script>
+    <script src="../node_modules/angular-filter/dist/angular-filter.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.10/ngStorage.min.js"></script> -->
 
 </head>
@@ -52,10 +53,22 @@
                     
                   </tr>
                 </thead>
+                <th class="filter-header" colspan="5">Grupy</th>
                 <tbody>
-
-                  <tr ng-repeat="task in tasks">
-                    <th><input type="text" name="" ng-model="task.name" value="{{task.name}}"></th>
+                        <tr ng-repeat="(key,value) in tasks | groupBy: 'name'" class="tasks-table-group">
+                                <th>  {{ key }}</th>
+                                <td>  </td>
+                                <td>  </td>
+                                <th>  {{ value | map:'time_spent' | sum }} m  </th>
+                              
+                        </tr>
+                        
+                </tbody>
+                
+                <tbody>
+                    <th class="filter-header" colspan="5">Pojedyncze</th>
+                  <tr ng-repeat="task in tasks" class="tasks-table-single">
+                    <th><input type="text" name="" ng-model="task.name" value="{{task.name}}" class="task-single-name"></th>
                     <td>
                         <input type="number" name="" class="task-time" ng-model="task.start_hour" value="task.start_hour">
                         <input type="number" name="" class="task-time" ng-model="task.start_minute" value="task.start_minute">
@@ -65,10 +78,11 @@
                         <input type="number" class="task-time" ng-model="task.end_hour" value="task.end_hour">
                         <input type="number" class="task-time" ng-model="task.end_minute" value="task.end_minute">
                     </td>
-                    <td>{{calculateMinutes(task)}}m</td>
+                    <td>{{calcMins(task)}}m</td>
                     <td><button class="delete-task" ng-click="deleteTask($index)"><i class="far fa-trash-alt" aria-hidden="true"></i></button></td>
+                    </td>
                   </tr>
-                  
+          
                 </tbody>
                 <tfoot>
                   <td></td>

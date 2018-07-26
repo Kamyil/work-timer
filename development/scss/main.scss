@@ -49,7 +49,6 @@ body{
     height: 50px;
     outline: none;
     border: 1px solid $primary-color;
-    margin: 50px;
     transform: rotate(45deg);
     @include font($serif-font,20px,$primary-color,300,null);
     @include scaleOnActive(0.9,0.25);

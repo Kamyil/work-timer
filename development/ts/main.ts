@@ -1,14 +1,16 @@
 // import angular from 'angular';
 // import ngStorage from 'ngstorage';
 import 'bootstrap';
+import 'angular-filter';
 import '../scss/main.scss';
 import './components/date.ts';
 import './components/notificationToggleClass.ts';
 
 
+
 declare var angular: any;
 
-var app = angular.module('app',[]);
+var app = angular.module('app',['angular.filter']);
 app.controller('tasksController', ['$scope', function($scope,$timeout){
 
 
@@ -52,7 +54,7 @@ $scope.deleteTask = function(){
     $scope.tasks.splice(this.$index, 1);
     const storage = $scope.tasks;
 }
-$scope.calculateMinutes = (task) => {
+$scope.calcMins = (task) => {
 
     let today = new Date();
     let time1 = today.setHours(task.start_hour);
@@ -66,6 +68,14 @@ $scope.calculateMinutes = (task) => {
 
 
 }
+
+// $scope.calcMinsAll = (tasks) => {
+//     let total = 0;
+//     angular.forEach(tasks, (task) => {
+//        total += parseInt(task.time_spent);
+//     });
+//     return total;
+// }
 
 function convertMinsToHrsMins(mins:number){
     let h:any = Math.floor(mins / 60);
