@@ -1,8 +1,9 @@
 table{
 
     // @include centerPositionAbsolute();
-    margin-top: 50px;
-    width: 90vw;
+    
+    width: 80vw;
+    margin: 50px auto;
     @include font($serif-font);
     text-align: center;
     thead{
@@ -21,7 +22,7 @@ table{
 
     th{
         padding: 10px;
-        font-family: $serif-font;
+        @include font($serif-font,null,$background-color,500,null);
         &:first-child{
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
@@ -49,7 +50,7 @@ table{
     .task{
         &-single{
             &-name{
-                color: white
+                @include font($sans-font,null,white,500,null);
             }
         }
     }

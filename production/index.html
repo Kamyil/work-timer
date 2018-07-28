@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Work-Timer</title>
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="img/klepsydra2.svg"/>
     
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Serif&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
@@ -56,13 +56,12 @@
                 <th class="filter-header" colspan="5">Grupy</th>
                 <tbody>
                         <tr ng-repeat="(key,value) in tasks | groupBy: 'name'" class="tasks-table-group">
-                                <th>  {{ key }}</th>
+                                <th class="task-single-name">  {{ key }}</th>
                                 <td>  </td>
                                 <td>  </td>
-                                <th>  {{ value | map:'time_spent' | sum }} m  </th>
+                                <th class="task-single-name">  {{ value | map:'time_spent' | sum }} m  </th>
                               
                         </tr>
-                        
                 </tbody>
                 
                 <tbody>
@@ -78,12 +77,13 @@
                         <input type="number" class="task-time" ng-model="task.end_hour" value="task.end_hour">
                         <input type="number" class="task-time" ng-model="task.end_minute" value="task.end_minute">
                     </td>
-                    <td>{{calcMins(task)}}m</td>
+                    <td class="task-single-name">{{calcMins(task)}}m</td>
                     <td><button class="delete-task" ng-click="deleteTask($index)"><i class="far fa-trash-alt" aria-hidden="true"></i></button></td>
                     </td>
                   </tr>
           
                 </tbody>
+
                 <tfoot>
                   <td></td>
                   <td></td>
