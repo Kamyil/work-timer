@@ -53,8 +53,8 @@
                     
                   </tr>
                 </thead>
-                <th class="filter-header" colspan="5">Grupy</th>
-                <tbody>
+                <th class="filter-header" colspan="5"><button class="toggle-vis" ng-click="showGroups = !showGroups;changeTogglerClassGroups()"><i class="{{togglerVisGroups}}"></i></button>Grupy</th>
+                <tbody ng-show="!showGroups">
                         <tr ng-repeat="(key,value) in tasks | groupBy: 'name'" class="tasks-table-group">
                                 <th class="task-single-name">  {{ key }}</th>
                                 <td>  </td>
@@ -64,8 +64,11 @@
                         </tr>
                 </tbody>
                 
-                <tbody>
-                    <th class="filter-header" colspan="5">Pojedyncze</th>
+                    <th class="filter-header" colspan="5">
+                            <button class="toggle-vis" ng-click="showSingles = !showSingles;changeTogglerClassSingles()"><i class="{{togglerVisSingles}}"></i></button>
+                        Pojedyncze
+                    </th>
+                <tbody ng-show="!showSingles">
                   <tr ng-repeat="task in tasks" class="tasks-table-single">
                     <th><input type="text" name="" ng-model="task.name" value="{{task.name}}" class="task-single-name"></th>
                     <td>

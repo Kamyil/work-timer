@@ -1,0 +1,17 @@
+@mixin inverseBtn($font,$font-size,$main-color,$bg-color){
+        @include font(null,$font-size,$main-color,null,null);
+        background-color: transparent;
+        border: 1px solid $main-color;
+        border-radius: 5px;
+        width: 45px;
+        height: 25px;
+        outline: none;
+        text-align: center;
+        @include scaleOnActive(0.9,0.25);
+
+        &:hover{
+         @include font(null,$font-size,$bg-color,null,null);
+         @include fluidHoverField($main-color,.25);
+         
+        }
+}

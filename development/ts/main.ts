@@ -5,12 +5,13 @@ import 'angular-filter';
 import '../scss/main.scss';
 import './components/date.ts';
 import './components/notificationToggleClass.ts';
+import './components/table';
 
 
 
 declare var angular: any;
 
-var app = angular.module('app',['angular.filter']);
+const app = angular.module('app',['angular.filter']);
 app.controller('tasksController', ['$scope', function($scope,$timeout){
 
 
@@ -103,6 +104,31 @@ $scope.loadData = () => {
     $scope.tasks = JSON.parse(localStorage.getItem('storage'));
 
 };
+
+
+// Filters Hide and Show
+
+$scope.togglerVisGroups = 'fa fa-angle-double-up';
+$scope.togglerVisSingles = 'fa fa-angle-double-up';
+
+$scope.changeTogglerClassGroups = () => {
+
+    if ($scope.togglerVisGroups == "fa fa-angle-double-up"){
+        $scope.togglerVisGroups = "fa fa-angle-double-down";
+    }else{
+        $scope.togglerVisGroups = "fa fa-angle-double-up";
+    }
+
+}
+$scope.changeTogglerClassSingles = () => {
+
+    if ($scope.togglerVisSingles == "fa fa-angle-double-up"){
+        $scope.togglerVisSingles = "fa fa-angle-double-down";
+    }else{
+        $scope.togglerVisSingles = "fa fa-angle-double-up";
+    }
+
+}
 
 // Auto save
 

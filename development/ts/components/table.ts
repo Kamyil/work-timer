@@ -1,28 +1,9 @@
-const addTaskBtn:HTMLButtonElement = document.querySelector('.add-task-btn');
-// addTaskBtn.addEventListener('click',addTask);
+// declare var angular: any;
+// angular.module('app',['angular.filter']).controller('tasksController', ['$scope', function($scope,$timeout){
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// function addTask(name:string,start:number,stop:number,timeSpent:number,tools:any){
-
-
-
-
-
-
-// }
+// }]);
