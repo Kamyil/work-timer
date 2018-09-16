@@ -19,7 +19,7 @@ app.controller('tasksController', ['$scope', function($scope,$timeout){
 
 $scope.tasks = [
     {
-        name: 'Task Review',
+        name: '',
         start_hour: 8,
         start_minute: 0,
         end_hour: 8,
@@ -28,7 +28,7 @@ $scope.tasks = [
     }
 ];
 let storage = $scope.tasks;
-$scope.totalHours; 
+$scope.totalHours;
 
 
 
@@ -36,21 +36,39 @@ $scope.addTask = () => {
     let today = new Date();
     let h = today.getHours();
     let m = today.getMinutes();
-  
+
     $scope.tasks.push({
-      
+
         name: 'Task',
         start_hour: h,
         start_minute: m,
         end_hour: h+1,
         end_minute: h+1,
         time_spent: null
-        
+
     });
     storage = $scope.tasks;
-   
- 
+
 }
+
+$scope.addBreak = () => {
+    let today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+
+    $scope.tasks.push({
+
+        name: 'Przerwa',
+        start_hour: h,
+        start_minute: m,
+        end_hour: h+1,
+        end_minute: h+1,
+        time_spent: null
+
+    });
+    storage = $scope.tasks;
+}
+
 $scope.deleteTask = function(){
     $scope.tasks.splice(this.$index, 1);
     const storage = $scope.tasks;
@@ -60,7 +78,7 @@ $scope.calcMins = (task) => {
     let today = new Date();
     let time1 = today.setHours(task.start_hour);
     time1 = today.setMinutes(task.start_minute);
-    
+
     let time2 = today.setHours(task.end_hour);
     time2 = today.setMinutes(task.end_minute);
     task.time_spent = (time2 - time1)/1000;
@@ -97,7 +115,7 @@ $scope.getTotal = () => {
 
 $scope.saveData = () => {
     localStorage.setItem('storage', JSON.stringify($scope.tasks));
-    
+
 }
 $scope.loadData = () => {
 
@@ -108,24 +126,24 @@ $scope.loadData = () => {
 
 // Filters Hide and Show
 
-$scope.togglerVisGroups = 'fa fa-angle-double-up';
-$scope.togglerVisSingles = 'fa fa-angle-double-up';
+$scope.togglerVisGroups = 'fa fa-angle-up';
+$scope.togglerVisSingles = 'fa fa-angle-up';
 
 $scope.changeTogglerClassGroups = () => {
 
-    if ($scope.togglerVisGroups == "fa fa-angle-double-up"){
-        $scope.togglerVisGroups = "fa fa-angle-double-down";
+    if ($scope.togglerVisGroups == "fa fa-angle-up"){
+        $scope.togglerVisGroups = "fa fa-angle-down";
     }else{
-        $scope.togglerVisGroups = "fa fa-angle-double-up";
+        $scope.togglerVisGroups = "fa fa-angle-up";
     }
 
 }
 $scope.changeTogglerClassSingles = () => {
 
-    if ($scope.togglerVisSingles == "fa fa-angle-double-up"){
-        $scope.togglerVisSingles = "fa fa-angle-double-down";
-    }else{
-        $scope.togglerVisSingles = "fa fa-angle-double-up";
+    if ($scope.togglerVisSingles == "fa fa-angle-up"){
+        $scope.togglerVisSingles = "fa fa-angle-down";
+    } else {
+        $scope.togglerVisSingles = "fa fa-angle-up";
     }
 
 }

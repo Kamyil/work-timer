@@ -60,7 +60,7 @@ body{
         box-shadow: 0px 0px 76px -8px rgba(0,0,0,0.44);
         transform: rotate(-45deg);
         @include fluidHoverText($background-color,.25);
-        @include scaleOnActive(0.9,0.25); 
+        @include scaleOnActive(0.9,0.25);
     }
     &:active{
         border-radius: 5px;
@@ -70,11 +70,35 @@ body{
             transition-duration: .25s;
         }
     }
-    
-    
     span{
         transform: rotate(-45deg);
         display: block;
     }
-    
+}
+
+.add-break-btn{
+    @extend .add-task-btn;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    left: 35px;
+    top: 5px;
+
+    &:hover {
+        i{
+            transform: rotate(45deg);
+            position: relative;
+            left: -3px;
+            bottom: 8px;
+        }
+    }
+
+    i{
+        transform: rotate(-45deg);
+        font-size: 11px;
+        position: relative;
+        bottom: 5px;
+        left: -2px;
+    }
+
 }
