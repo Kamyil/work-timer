@@ -119,6 +119,8 @@ table{
         background: none;
         @include inverseBtn('FontAwesome',12px,$primary-color,$background-color);
         margin-right: 15px;
+        position: relative;
+        bottom: 4px;
     }
 
 
