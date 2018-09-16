@@ -28,12 +28,12 @@ nav{
     background-color: $background-color;
     border-radius: 5px;
 
-    .notes-container{
+    .notes-container, .prefix-container{
         display: inline-block;
         width: 97%;
         overflow: auto;
 
-        div[contenteditable]{
+        div[contenteditable],#prefix-input{
             border: none;
             border-radius: 5px;
             background-color: $tile-color;
@@ -43,6 +43,7 @@ nav{
             overflow: auto;
             resize: none;
             width: 97%;
+            min-height: 25px;
             outline: none;
             margin: 5px;
             padding: 5px;
@@ -56,6 +57,9 @@ nav{
                 background-color: $primary-color;
                 color: $tile-color;
             }
+        }
+        #prefix-input{
+            text-align: center;
         }
     }
 }

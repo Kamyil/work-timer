@@ -31,6 +31,12 @@ table{
         }
 
     }
+    td{
+       &:last-child{
+           border-top-right-radius: 5px;
+           border-bottom-right-radius: 5px;
+       }
+    }
     .tasks{
         &-table{
             font-family: $sans-font;

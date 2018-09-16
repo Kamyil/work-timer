@@ -16,5 +16,12 @@
 
     }
 
+    &:nth-child(1){
+        margin-left: 6px;
+    }
+
+    &:nth-child(2){
+        margin-right: 20px;
+    }
 
 }

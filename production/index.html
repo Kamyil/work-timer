@@ -40,13 +40,18 @@
     <button class="storageControl" id="save-to-localStorage" ng-click="saveData()">Zapisz</button>
     <button class="storageControl" id="load-from-localStorage" ng-click="loadData()">Wczytaj</button>
     <button class="storageControl" id="notes-vis-toggler" ng-click="showNotes = !showNotes">{{ showNotes ? 'Pokaż notatki' : 'Ukryj notatki' }}</button>
+    <button class="storageControl" id="notes-vis-toggler" ng-click="showPrefix = !showPrefix">Edytuj przedrostek</button>
+
+    <div class="prefix-container" ng-show="!showPrefix">
+        <input type="text" ng-model="prefix" id="prefix-input" placeholder="Przedrostek"></input>
+    </div>
+
     <div class="notes-container" ng-show="!showNotes">
-        <div contenteditable ng-model="notes" id=""></div>
+        <div contenteditable ng-model="notes" placeholder="Notatka" id=""></div>
     </div>
 </div>
 
 <div class="row">
-
 
               <table>
                 <thead>

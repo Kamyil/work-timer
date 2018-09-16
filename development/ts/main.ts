@@ -36,10 +36,11 @@ $scope.addTask = () => {
     let today = new Date();
     let h = today.getHours();
     let m = today.getMinutes();
+    let prefix = $scope.prefix;
 
     $scope.tasks.push({
 
-        name: 'Task',
+        name: prefix,
         start_hour: h,
         start_minute: m,
         end_hour: h+1,
@@ -61,8 +62,8 @@ $scope.addBreak = () => {
         name: 'Przerwa',
         start_hour: h,
         start_minute: m,
-        end_hour: h+1,
-        end_minute: h+1,
+        end_hour: h,
+        end_minute: m+10,
         time_spent: null
 
     });
@@ -87,14 +88,6 @@ $scope.calcMins = (task) => {
 
 
 }
-
-// $scope.calcMinsAll = (tasks) => {
-//     let total = 0;
-//     angular.forEach(tasks, (task) => {
-//        total += parseInt(task.time_spent);
-//     });
-//     return total;
-// }
 
 function convertMinsToHrsMins(mins:number){
     let h:any = Math.floor(mins / 60);
