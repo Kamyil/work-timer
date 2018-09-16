@@ -120,24 +120,24 @@ $scope.loadData = () => {
 
 // Filters Hide and Show
 
-$scope.togglerVisGroups = 'fa fa-angle-up';
-$scope.togglerVisSingles = 'fa fa-angle-up';
+$scope.togglerVisGroups = 'fa fa-angle-double-up';
+$scope.togglerVisSingles = 'fa fa-angle-double-up';
 
 $scope.changeTogglerClassGroups = () => {
 
-    if ($scope.togglerVisGroups == "fa fa-angle-up"){
-        $scope.togglerVisGroups = "fa fa-angle-down";
+    if ($scope.togglerVisGroups == "fa fa-angle-double-up"){
+        $scope.togglerVisGroups = "fa fa-angle-double-down";
     }else{
-        $scope.togglerVisGroups = "fa fa-angle-up";
+        $scope.togglerVisGroups = "fa fa-angle-double-up";
     }
 
 }
 $scope.changeTogglerClassSingles = () => {
 
-    if ($scope.togglerVisSingles == "fa fa-angle-up"){
-        $scope.togglerVisSingles = "fa fa-angle-down";
+    if ($scope.togglerVisSingles == "fa fa-angle-double-up"){
+        $scope.togglerVisSingles = "fa fa-angle-double-down";
     } else {
-        $scope.togglerVisSingles = "fa fa-angle-up";
+        $scope.togglerVisSingles = "fa fa-angle-double-up";
     }
 
 }
