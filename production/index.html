@@ -36,8 +36,14 @@
 
 </div>
 
-<button class="storageControl" id="save-to-localStorage" ng-click="saveData()">Zapisz</button>
-<button class="storageControl" id="load-from-localStorage" ng-click="loadData()">Wczytaj</button>
+<div class="upper-bar">
+    <button class="storageControl" id="save-to-localStorage" ng-click="saveData()">Zapisz</button>
+    <button class="storageControl" id="load-from-localStorage" ng-click="loadData()">Wczytaj</button>
+    <button class="storageControl" id="notes-vis-toggler" ng-click="showNotes = !showNotes">{{ showNotes ? 'Pokaż notatki' : 'Ukryj notatki' }}</button>
+    <div class="notes-container" ng-show="!showNotes">
+        <div contenteditable ng-model="notes" id=""></div>
+    </div>
+</div>
 
 <div class="row">
 
@@ -92,7 +98,6 @@
                   <td></td>
                   <td></td>
                   <td class="total">
-                   <span class="total-header">Łącznie</span> &nbsp;
                    <span class="total-number"> {{getTotal(task)}} </span>
                   </td>
               </tfoot>

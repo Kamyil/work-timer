@@ -7,12 +7,14 @@
     height: 25px;
     text-align: center;
     outline: none;
+    position: relative;
+    bottom: 2px;
     @include scaleOnActive(0.9,0.25);
     &:hover{
      @include font($sans-font,14px,$background-color,null,null);
      @include fluidHoverField($primary-color,.25);
-     
+
     }
-    
+
 
 }

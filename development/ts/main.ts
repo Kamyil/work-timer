@@ -19,7 +19,7 @@ app.controller('tasksController', ['$scope', function($scope,$timeout){
 
 $scope.tasks = [
     {
-        name: '',
+        name: 'Good morning! :)',
         start_hour: 8,
         start_minute: 0,
         end_hour: 8,
@@ -115,6 +115,7 @@ $scope.getTotal = () => {
 
 $scope.saveData = () => {
     localStorage.setItem('storage', JSON.stringify($scope.tasks));
+
 
 }
 $scope.loadData = () => {
