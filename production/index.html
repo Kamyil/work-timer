@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Work-Timer</title>
-    <link rel="shortcut icon" type="image/png" href="img/klepsydra2.svg"/>
-    
+    <link rel="shortcut icon" type="image/png" href="./img/klepsydra2.svg"/>
+
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|PT+Serif&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <script src="./js/angular.js"></script>
@@ -17,31 +17,31 @@
 <body>
 
         <!-- <nav>
-                
+
                     <div class="nav-current-task">ABIL-2137</div>
                     <div class="nav-task-controls">
                         <div class="task-control-play"></div>
                         <div class="task-control-pause"></div>
                         <div class="task-control-done"></div>
-                        
-                        
+
+
                     </div>
-                
+
         </nav> -->
 
 <div class="container" ng-controller="tasksController">
     <div class="row">
         <div class="col-lg-1"><h2 class="main-title">Dziś</h2></div>
         <div class="col-lg-2 clock-and-date"><h2 id="clock"></h2><h2 id="todays-date"></h2></div>
-    
+
 </div>
 
 <button class="storageControl" id="save-to-localStorage" ng-click="saveData()">Zapisz</button>
 <button class="storageControl" id="load-from-localStorage" ng-click="loadData()">Wczytaj</button>
 
 <div class="row">
-      
-              
+
+
               <table>
                 <thead>
                   <tr>
@@ -50,7 +50,7 @@
                     <th>Koniec</th>
                     <th>Spędzony czas</th>
                     <th>Usuń</th>
-                    
+
                   </tr>
                 </thead>
                 <th class="filter-header" colspan="5"><button class="toggle-vis" ng-click="showGroups = !showGroups;changeTogglerClassGroups()"><i class="{{togglerVisGroups}}"></i></button>Grupy</th>
@@ -60,10 +60,10 @@
                                 <td>  </td>
                                 <td>  </td>
                                 <th class="task-single-name">  {{ value | map:'time_spent' | sum }} m  </th>
-                              
+
                         </tr>
                 </tbody>
-                
+
                     <th class="filter-header" colspan="5">
                             <button class="toggle-vis" ng-click="showSingles = !showSingles;changeTogglerClassSingles()"><i class="{{togglerVisSingles}}"></i></button>
                         Pojedyncze
@@ -74,7 +74,7 @@
                     <td>
                         <input type="number" name="" class="task-time" ng-model="task.start_hour" value="task.start_hour">
                         <input type="number" name="" class="task-time" ng-model="task.start_minute" value="task.start_minute">
-                    
+
                     </td>
                     <td>
                         <input type="number" class="task-time" ng-model="task.end_hour" value="task.end_hour">
@@ -84,7 +84,7 @@
                     <td><button class="delete-task" ng-click="deleteTask($index)"><i class="far fa-trash-alt" aria-hidden="true"></i></button></td>
                     </td>
                   </tr>
-          
+
                 </tbody>
 
                 <tfoot>
@@ -96,13 +96,18 @@
                    <span class="total-number"> {{getTotal(task)}} </span>
                   </td>
               </tfoot>
-                
+
 
               </table> <br>
 </div>
+
 <button class="add-task-btn" ng-click="addTask()">
    <span> + </span>
 </button>
+
+<button class="add-break-btn" ng-click="addBreak()">
+    <i class="fas fa-coffee" aria-hidden="true"></i>
+ </button>
 
 <!-- Alert Box -->
 <div class="notification bounceOutDown">
