@@ -48,6 +48,14 @@ nav{
             padding: 5px;
             position: relative;
             top: 4px;
+            &::selection{
+                background-color: $primary-color;
+                color: $tile-color;
+            }
+            &::-moz-selection{
+                background-color: $primary-color;
+                color: $tile-color;
+            }
         }
     }
 }

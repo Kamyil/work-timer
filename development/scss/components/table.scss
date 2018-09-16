@@ -1,5 +1,5 @@
 table{
-        
+
     width: 80vw;
     margin: 50px auto;
     @include font($serif-font);
@@ -14,7 +14,7 @@ table{
         border-bottom-right-radius: 0 !important;
         border-bottom: 1px solid $primary-color;
         text-align: left;
-        
+
 
     }
 
@@ -29,21 +29,21 @@ table{
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
         }
-      
+
     }
     .tasks{
         &-table{
             font-family: $sans-font;
             color: white;
-            
+
             &-single,&-group{
                 &:nth-child(even){
                     background-color: $tile-color;
-                    }    
+                    }
             }
-      
 
-        } 
+
+        }
     }
     .task{
         &-single{
@@ -61,7 +61,7 @@ table{
         outline: none !important;
         &[type='number']{
             -moz-appearance:textfield;
-        
+
         }
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
@@ -101,8 +101,8 @@ table{
         &-number{
 
             @include font($sans-font,null,$background-color,700,null);
-            
-        
+
+
         }
 
 
