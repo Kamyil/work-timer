@@ -5,7 +5,7 @@
   "main": "main.min.js",
   "dependencies": {
     "bootstrap": "^4.1.2",
-    "browser-sync": "^2.24.5",
+    "browser-sync": "^2.26.3",
     "gulp-changed": "^3.2.0",
     "gulp-uglify": "^3.0.0"
   },

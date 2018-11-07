@@ -70,6 +70,18 @@ $scope.addBreak = () => {
     storage = $scope.tasks;
 }
 
+$scope.deleteAllBreaks = () => {
+
+    const returnedArray = [];
+    angular.forEach($scope.tasks, (task) => {     
+        if (task.name !== 'Przerwa') {
+            returnedArray.push(task);
+        }
+    });
+    $scope.tasks = returnedArray;
+    return false;
+}
+
 $scope.deleteTask = function(){
     $scope.tasks.splice(this.$index, 1);
     const storage = $scope.tasks;
@@ -85,7 +97,6 @@ $scope.calcMins = (task) => {
     task.time_spent = (time2 - time1)/1000;
     task.time_spent = task.time_spent/60;
     return task.time_spent;
-
 
 }
 
