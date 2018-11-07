@@ -1,6 +1,6 @@
 table{
 
-    width: 80vw;
+    width: 70vw;
     margin: 50px auto;
     @include font($serif-font);
     text-align: center;
@@ -47,7 +47,6 @@ table{
                     background-color: $tile-color;
                     }
             }
-
 
         }
     }
