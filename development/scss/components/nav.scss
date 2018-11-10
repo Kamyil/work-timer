@@ -28,13 +28,14 @@ nav{
     background-color: $background-color;
     border-radius: 5px;
 
-    .notes-container, .prefix-container{
+    .upperbar-input-field{
         display: inline-block;
         width: 97%;
         overflow: auto;
 
-        div[contenteditable],#prefix-input{
+        input {
             border: none;
+            text-align: center;
             border-radius: 5px;
             background-color: $tile-color;
             font-family: $sans-font;

@@ -16,18 +16,6 @@
 </head>
 <body>
 
-        <!-- <nav>
-
-                    <div class="nav-current-task">ABIL-2137</div>
-                    <div class="nav-task-controls">
-                        <div class="task-control-play"></div>
-                        <div class="task-control-pause"></div>
-                        <div class="task-control-done"></div>
-
-
-                    </div>
-
-        </nav> -->
 
 <div class="container" ng-controller="tasksController">
     <div class="row">
@@ -40,16 +28,21 @@
     <button class="storageControl" id="save-to-localStorage" ng-click="saveData()">Zapisz</button>
     <button class="storageControl" id="load-from-localStorage" ng-click="loadData()">Wczytaj</button>
     <button class="storageControl" id="notes-vis-toggler" ng-click="showNotes = !showNotes">{{ showNotes ? 'Pokaż notatki' : 'Ukryj notatki' }}</button>
-    <button class="storageControl" id="notes-vis-toggler" ng-click="showPrefix = !showPrefix">Edytuj przedrostek</button>
+    <button class="storageControl" id="prefix-vis-toggler" ng-click="showPrefix = !showPrefix">Edytuj przedrostek</button>
+    <button class="storageControl" id="logLink-vis-toggler" ng-click="showLogLink = !showLogLink">Edytuj link</button>
 
     <button class="storageControl" id="remove-breaks" ng-click="deleteAllBreaks()">Usuń przerwy</button>
 
-    <div class="prefix-container" ng-show="!showPrefix">
+    <div class="upperbar-input-field" ng-show="!showPrefix">
         <input type="text" ng-model="prefix" id="prefix-input" placeholder="Przedrostek"></input>
     </div>
 
-    <div class="notes-container" ng-show="!showNotes">
-        <div contenteditable ng-model="notes" placeholder="Notatka" id=""></div>
+    <div class="upperbar-input-field" ng-show="!showNotes">
+        <input type="text" ng-model="notes" placeholder="Notatka" id="">
+    </div>
+
+    <div class="upperbar-input-field" ng-show="!showLogLink">
+        <input type="text" ng-model="logLink" id="logLink-input" placeholder="Link do tasków"></input>
     </div>
 </div>
 
@@ -62,7 +55,7 @@
                     <th>Start</th>
                     <th>Koniec</th>
                     <th>Spędzony czas</th>
-                    <th>Usuń</th>
+                    <th>Usuń / Loguj</th>
 
                   </tr>
                 </thead>
@@ -72,8 +65,13 @@
                                 <th class="task-single-name">  {{ key }}</th>
                                 <td>  </td>
                                 <td>  </td>
-                                <th class="task-single-name">  {{ value | map:'time_spent' | sum }} m  </th>
-
+                                <th class="task-single-name">  {{ value | map:'time_spent' | sum }} m  </th>                            
+                                <td>
+                                    <a class="delete-task" target="_blank" ng-href="{{openTab(key)}}">
+                                        LINK
+                                    </a>
+                                </td>
+                                <!-- TODO: Change delete-task class, to global one -->
                         </tr>
                 </tbody>
 

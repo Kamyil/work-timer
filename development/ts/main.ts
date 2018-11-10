@@ -12,7 +12,7 @@ import './components/table';
 declare var angular: any;
 
 const app = angular.module('app',['angular.filter']);
-app.controller('tasksController', ['$scope', function($scope,$timeout){
+app.controller('tasksController', ['$scope', function ($scope, $timeout, $window){
 
 
 
@@ -29,7 +29,8 @@ $scope.tasks = [
 ];
 let storage = $scope.tasks;
 $scope.totalHours;
-
+$scope.prefix = "JM-4";
+$scope.logLink = "mccomprojects.atlassian.net/browse";
 
 
 $scope.addTask = () => {
@@ -50,6 +51,11 @@ $scope.addTask = () => {
     });
     storage = $scope.tasks;
 
+}
+
+$scope.deleteTask = () => {
+    $scope.tasks.splice(this.$index, 1);
+    const storage = $scope.tasks;
 }
 
 $scope.addBreak = () => {
@@ -82,12 +88,9 @@ $scope.deleteAllBreaks = () => {
     return false;
 }
 
-$scope.deleteTask = function(){
-    $scope.tasks.splice(this.$index, 1);
-    const storage = $scope.tasks;
-}
-$scope.calcMins = (task) => {
 
+$scope.calcMins = (task) => {
+    
     let today = new Date();
     let time1 = today.setHours(task.start_hour);
     time1 = today.setMinutes(task.start_minute);
@@ -115,6 +118,14 @@ $scope.getTotal = () => {
     total = convertMinsToHrsMins(total);
     return total+'h';
 }
+    
+// $scope.goToLogLink = ($window) => {
+//     $window.open(`${$scope.logLink}/${this.$scope.task}`, '_blank');
+// };
+$scope.openTab = function () {
+    return `https://${$scope.logLink}/${this.key}`;
+}
+
 
 
 $scope.saveData = () => {

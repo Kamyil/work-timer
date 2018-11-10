@@ -91,23 +91,24 @@ table{
         }
     }
     .delete-task{
-        @include inverseBtn('FontAwesome',14px,$primary-color,$background-color);
+        @include font('FontAwesome', 16px, #fff);
+        all: unset;
+        &:hover {
+            @include fluidHoverText($primary-color, .15s);
+        }
     }
-    .total{
+    .total {
 
         background-color: $primary-color;
         color: $background-color;
         padding: 10px 0px 10px 0px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
-        &-header{
+        &-header {
             @include font($serif-font,null,$background-color,500,null);
         }
-        &-number{
-
+        &-number {
             @include font($sans-font,null,$background-color,700,null);
-
-
         }
 
 
