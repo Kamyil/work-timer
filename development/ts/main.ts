@@ -29,8 +29,8 @@ $scope.tasks = [
 ];
 let storage = $scope.tasks;
 $scope.totalHours;
-$scope.prefix = "JM-4";
-$scope.logLink = "mccomprojects.atlassian.net/browse";
+$scope.prefix = "";
+$scope.logLink = "";
 
 
 $scope.addTask = () => {
